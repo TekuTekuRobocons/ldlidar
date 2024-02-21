@@ -7,9 +7,9 @@ from launch_ros.actions import Node
 def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
-            name='serial_port', 
-            default_value='',
-            description='LD06 Serial Port'
+            name='serial_port_candidates', 
+            default_value='/dev/ttyACM0',
+            # description='LD06 Serial Port'
         ),
         DeclareLaunchArgument(
             name='topic_name', 
@@ -32,7 +32,7 @@ def generate_launch_description():
             name='ldlidar',
             output='screen',
             parameters=[
-                {'serial_port': LaunchConfiguration("serial_port")},
+                # {'serial_port_candidates': LaunchConfiguration("serial_port_candidates")},
                 {'topic_name': LaunchConfiguration("topic_name")},
                 {'lidar_frame': LaunchConfiguration("lidar_frame")},
                 {'range_threshold': LaunchConfiguration("range_threshold")}
