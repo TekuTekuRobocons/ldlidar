@@ -6,7 +6,7 @@ LD06::LD06()
   std::string topic_name = this->declare_parameter("topic_name", "scan");
   lidar_frame_ = this->declare_parameter("lidar_frame", "laser");
   range_threshold_ = this->declare_parameter("range_threshold", 0.005);
-  serial_port_candidates_ = this->declare_parameter("serial_port_candidates", std::vector<std::string>({"/dev/ttyACM0"}));
+  serial_port_candidates_ = this->declare_parameter("serial_port_candidates", std::vector<std::string>({"/dev/ttySerial564D005091"}));
 
   lidar_ = new LiPkg;
   lidar_pub_ = this->create_publisher<sensor_msgs::msg::LaserScan>(topic_name, 10);

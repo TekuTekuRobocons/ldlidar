@@ -8,7 +8,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
             name='serial_port_candidates', 
-            default_value='/dev/ttyACM0',
+            default_value='/dev/ttyACM2',
             # description='LD06 Serial Port'
         ),
         DeclareLaunchArgument(
